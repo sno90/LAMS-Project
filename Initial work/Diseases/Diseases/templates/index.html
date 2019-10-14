@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -11,8 +10,6 @@
   <link rel="stylesheet" href="static/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
 </head>
-
-
 <body>
   <div class="wrapper">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -25,8 +22,8 @@
       </div>
     </nav>
     <div class="hero text-center">
-      <h1 style="font-family: 'Michroma', sans-serif; text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 5px rgb(200, 200, 212);">Communicable Diseases</h1>
-      <p style="color: rgb(224, 224, 238); text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 5px rgb(200, 200, 212); font-size: 30px;">Protect Yourself and Your Environment</p>
+     <h1 style="font-family: 'Michroma', sans-serif; text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 5px rgb(200, 200, 212);">Communicable Diseases</h1>
+     <p style="color: rgb(224, 224, 238); text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 5px rgb(200, 200, 212); font-size: 30px;">Protect Yourself and Your Environment</p>
     </div>
     <div class="container">
       <div class="row margin-top-50">
@@ -73,6 +70,42 @@
                   <th class="table-head">Rate</th>
                 </tr>
               </thead>
+              <style>
+                  .pagination {
+                    display: inline-block;
+                  }
+                  
+                  .pagination a {
+                    color: black;
+                    float: left;
+                    padding: 8px 16px;
+                    text-decoration: none;
+                  }
+                  
+                  .pagination a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                    border-radius: 5px;
+                  }
+                  
+                  .pagination a:hover:not(.active) {
+                    background-color: #ddd;
+                    border-radius: 5px;
+                  }
+                  </style>
+                  </head>
+                  <body>
+                  <h2></h2>
+                  <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#" class="active">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">&raquo;</a>
+                  </div>
               <tbody></tbody>
             </table>
           </div>
@@ -80,7 +113,7 @@
       </div>
     </div>
     <footer class="footer" style="text-align: center;">
-      <span class="bottom"  style="font-family: 'Michroma', sans-serif;">Communicable Diseases</span>
+    <span class="bottom"  style="font-family: 'Michroma', sans-serif;">Communicable Diseases</span>  
     </footer>
   </div>
   <script src="static/js/appy.js"></script>

@@ -26,16 +26,14 @@ populate(data);
 // Filter by attribute
 button.on("click", () => {
   d3.event.preventDefault();
-  var inputYear = inputField1.property("value").trim();
-  console.log(inputYear);
+  var inputYear = +(inputField1.property("value").trim());
   var inputCounty = inputField2.property("value").toLowerCase().trim();
-  console.log(inputCounty);
   // Filter by field matching input value
-  var filterYear = data.filter(data => data.year === inputYear);
+  var filterYear = data.filter(d => d.Year === inputYear);
   console.log(filterYear)
-  var filterCounty = data.filter(data => data.county === inputCounty);
+  var filterCounty = data.filter(d => d.County.toLowerCase() === inputCounty);
   console.log(filterCounty)
-  var filterData = data.filter(data => data.year === inputYear && data.county === inputCounty);
+  var filterData = data.filter(d => d.Year === inputYear && d.County.toLowerCase() === inputCounty);
   console.log(filterData)
 
   // Add filtered sighting to table
@@ -44,7 +42,7 @@ button.on("click", () => {
   let response = {
     filterData, filterCounty, filterYear
   }
-console.log(response);
+
   if (response.filterData.length !== 0) {
     populate(filterData);
   }

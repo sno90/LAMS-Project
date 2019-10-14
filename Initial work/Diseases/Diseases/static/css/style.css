@@ -10,6 +10,13 @@ body {
   margin: 0;
 }
 
+.pagination a {
+  border-radius: 5px;
+}
+
+.pagination a.active {
+  border-radius: 5px;
+}
 /* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
 .wrapper {
   position: relative;
