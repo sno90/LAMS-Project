@@ -27,7 +27,9 @@ populate(data);
 button.on("click", () => {
   d3.event.preventDefault();
   var inputYear = inputField1.property("value").trim();
+  console.log(inputYear);
   var inputCounty = inputField2.property("value").toLowerCase().trim();
+  console.log(inputCounty);
   // Filter by field matching input value
   var filterYear = data.filter(data => data.year === inputYear);
   console.log(filterYear)
@@ -42,7 +44,7 @@ button.on("click", () => {
   let response = {
     filterData, filterCounty, filterYear
   }
-
+console.log(response);
   if (response.filterData.length !== 0) {
     populate(filterData);
   }
