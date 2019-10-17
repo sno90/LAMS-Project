@@ -1,4 +1,6 @@
-# Import Dependencies
+#################################################
+# 1. Import Dependencies
+#################################################
 import os
 
 import pandas as pd
@@ -12,14 +14,15 @@ from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+#################################################
+# 2. Database Setup & Configuration 
+#################################################
+
+### Flask Config
 app = Flask(__name__)
 
-
-#################################################
-# Database Setup
-#################################################
-
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '') or "sqlite:///Resources/Communicable_Disease_VA.sqlite"
+### SQLAlchemy Config
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///Resources/Communicable_Disease_VA.sqlite"
 db = SQLAlchemy(app)
 
 # reflect an existing database into a new model
@@ -30,12 +33,19 @@ Base.prepare(db.engine, reflect=True)
 # Save references to a table
 Samples_data = Base.classes.DISEASES
 
-
+#################################################
+# 3. Routes
+#################################################
+# WEBSITE (HTML + CSS/JS) ROUTE Endpoints
 @app.route("/")
 def index():
     """Return the homepage."""
     return render_template("index.html")
 
+@app.route("/bargraph")
+def bargraph():
+    """Go to bar graph"""
+    return render_template("bargraph.html")
 
 @app.route("/data")
 def names():
