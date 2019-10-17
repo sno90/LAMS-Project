@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Communicable Diseases</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html" style="font-family: 'Michroma', sans-serif;">Virginia Department of Health
+            <img class="nav-dis" src="static/images/Health Icon.gif">
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+     <h1 style="font-family: 'Michroma', sans-serif; text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 5px rgb(200, 200, 212);">Communicable Diseases</h1>
+     <p style="color: rgb(224, 224, 238); text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 5px rgb(200, 200, 212); font-size: 30px;">Protect Yourself and Your Environment</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading" style="font-family: 'Michroma', sans-serif;">Filter Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters" >
+                      <li class="filter list-group-item" style="background-color: #000307;">
+                        <!-- Date input -->
+                        <label for="date">Enter a Year</label>
+                        <input class="form-control" id="Year" type="text" placeholder="2010">
+                      </li>
+                      <li class="filter list-group-item" style="background-color: black;">
+                        <!-- City input -->
+                        <label for="date">Enter a County</label>
+                        <input class="form-control" id="County" type="text" placeholder="Arlington">
+                      </li>
+
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="submit" class="btn btn-default btn-lg btn-block">Filter Table</button>
+
+                  <button id="reset-btn" type="reset" class="btn btn-default btn-lg btn-block">Reset Table</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="diseases-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">Year</th>
+                  <th class="table-head">Region</th>
+                  <th class="table-head">District</th>
+                  <th class="table-head">County</th>
+                  <th class="table-head">Condition</th>
+                  <th class="table-head">Cases</th>
+                  <th class="table-head">Rate</th>
+                </tr>
+              </thead>
+              <style>
+                  .pagination {
+                    display: inline-block;
+                  }
+                  
+                  .pagination a {
+                    color: black;
+                    float: left;
+                    padding: 8px 16px;
+                    text-decoration: none;
+                  }
+                  
+                  .pagination a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                    border-radius: 5px;
+                  }
+                  
+                  .pagination a:hover:not(.active) {
+                    background-color: #ddd;
+                    border-radius: 5px;
+                  }
+                  </style>
+                  </head>
+                  <body>
+                  <h2></h2>
+                  <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#" class="active">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">&raquo;</a>
+                  </div>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer" style="text-align: center;">
+    <span class="bottom"  style="font-family: 'Michroma', sans-serif;">Communicable Diseases</span>  
+    </footer>
+  </div>
+  <script src="static/js/appy.js"></script>
+  </body>
+
+</html>

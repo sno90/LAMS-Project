@@ -1,0 +1,4 @@
+.DS_Store
+env/
+app_data_geo.json
+**/.ipynb_checkpoints/**
