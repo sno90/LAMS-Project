@@ -3,14 +3,20 @@ var chartArea = document.getElementById('myChart').getContext('2d');
 
 // Perform data fetch to Flask at the `/data` route
 // use D3.json to fetch data
-d3.json('/data').then(function (response) {
+d3.json('/data').then(function(diseaseData) {
   // response is our list of dictionaries (i.e. [{...}, {...}, {...}, ...])
   console.log('response:', response);
+  const years = []
+  const conditions = []
+  const = num_cases = []
 
   // process the data to get the values to plug into the graph (for loop)
-  years = []
-  condition = []
-  cases = []
+  diseaseData.forEach(function(data) {
+    data.Year = ; // need to udpate 
+    data.Condition = ; // need to udpate
+    data.Cases += data.Cases;  
+  })
+});
   
 
   // create chart using data
