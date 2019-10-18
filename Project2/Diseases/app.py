@@ -43,19 +43,9 @@ def index():
     return render_template("index.html")
 
 @app.route("/barchart")
-def bargraph():
-    """Go to bar graph"""
+def barchart():
+    """Go to bar chart"""
     return render_template("barchart.html")
-
-# @app.route("/map")
-# def bargraph():
-#     """Go to bar graph"""
-#     return render_template("map.html")
-
-# @app.route("/filter_data")
-# def bargraph():
-#     """Go to bar graph"""
-#     return render_template("data.html")
 
 @app.route("/data")
 def names():
@@ -69,6 +59,23 @@ def names():
     # Return a list of the column names (sample names)
     return df_json
 
-  
+@app.route("/data/<year>")
+def year_data(year):
+    """Return data for specified year"""
+    print('Input year:', year)
+    print(type(year))
+
+    # Use Pandas to perform the sql query
+    stmt = db.session.query(Samples_data).statement
+    df = pd.read_sql_query(stmt, db.session.bind) 
+
+    # Filter by year
+    year_df = df[df['Year'] == int(year)]
+
+    df_json = year_df.to_json(orient = "records")
+
+    # Return a list of the column names (sample names)
+    return df_json
+
 if __name__ == "__main__":
     app.run()

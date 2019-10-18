@@ -244,3 +244,8 @@ path.domain {
     stroke: #ddd;
 }
   
+/* doughnutchart */
+#myChart {
+  height: 50%;
+  width: 50%;
+}
