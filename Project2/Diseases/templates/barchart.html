@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Communicable Diseases</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/dropdown.css">
+
+    <style type="text/css">
+        svg {
+            font: 10px sans-serif;
+            shape-rendering: crispEdges;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+        }
+
+        path.domain {
+            stroke: none;
+        }
+
+        .y .tick line {
+            stroke: #ddd;
+        }
+    </style> -->
+    <!-- test scripts for bar chart -->
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn" href="index.html"
+                style="font-family: 'Michroma', sans-serif;">Reports</button>
+            <img class="nav-dis" src="static/images/Health Icon.gif">
+            <div id="myDropdown" class="dropdown-content">
+                <a href="templates/R1.html">R1</a>
+                <a href="templates/R2.html">R2</a>
+                <a href="/barchart">Contageous Diseases Bar Graph</a>
+            </div>
+        </div>
+        <!-- End of Navigation -->
+
+        <!-- Graph Area -->
+        <canvas id="myChart" width="200" height="200"></canvas>
+        <!-- End Graph Area -->
+
+    </div>
+
+    <!-- Install D3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    
+    <!-- Install chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"
+        integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+
+    <script src="static/js/js appy2.js"></script>
+    <script src="static/js/barchart.js"></script>
+</body>
+</html>

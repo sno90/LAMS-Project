@@ -1,5 +1,6 @@
-# Import Dependencies
-import os
+#################################################
+# 1. Imports
+#################################################
 
 import pandas as pd
 import numpy as np
@@ -12,14 +13,15 @@ from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+#################################################
+# 2. Database Setup & Configuration
+#################################################
+
+### FLASK CONFIG
 app = Flask(__name__)
 
-
-#################################################
-# Database Setup
-#################################################
-
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '') or "sqlite:///Resources/Communicable_Disease_VA.sqlite"
+### SQL ALCHEMY CONFIG
+app.config["SQLALCHEMY_DATABASE_URI"] =  "sqlite:///Resources/Communicable_Disease_VA.sqlite"
 db = SQLAlchemy(app)
 
 # reflect an existing database into a new model
@@ -30,7 +32,10 @@ Base.prepare(db.engine, reflect=True)
 # Save references to a table
 Samples_data = Base.classes.DISEASES
 
-
+#################################################
+# 3. Routes
+#################################################
+# WEBSITE (HTML + CSS/JS) ROUTE Endpoints
 @app.route("/")
 def index():
     """Return the homepage."""

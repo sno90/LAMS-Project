@@ -42,10 +42,20 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
-@app.route("/bargraph")
+@app.route("/barchart")
 def bargraph():
     """Go to bar graph"""
-    return render_template("bargraph.html")
+    return render_template("barchart.html")
+
+# @app.route("/map")
+# def bargraph():
+#     """Go to bar graph"""
+#     return render_template("map.html")
+
+# @app.route("/filter_data")
+# def bargraph():
+#     """Go to bar graph"""
+#     return render_template("data.html")
 
 @app.route("/data")
 def names():
