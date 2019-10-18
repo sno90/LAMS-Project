@@ -1,55 +1,58 @@
 // Target and hold reference of the chart element on the html page
 var chartArea = document.getElementById('myChart').getContext('2d');
+// var doughNutChart;
 
-// Perform data fetch to Flask at the `/data` route
-// use D3.json to fetch data
-d3.json('/data').then(function (response) {
-  // response is our list of dictionaries (i.e. [{...}, {...}, {...}, ...])
-  console.log('response:', response);
+// Build Chart Function (can use this to build the chart when a user picks a year)
+function doughnutChart(year) {
 
-  // process the data to get the values to plug into the graph (for loop)
-  years = []
-  condition = []
-  cases = []
-  
+  // with the year that we get from the dropdown, perform data fetch @ /data/<year> route
+  // year = 2009
+  d3.json('/data/' + year).then(function (diseaseData) { // '/data/2009'
+    // diseaseData is our list of dictionaries (i.e. [{...}, {...}, {...}, ...])
+    console.log('diseaseData:', diseaseData);
+    // const years = []
+    let conditions = [];
+    let num_cases = [];
 
-  // create chart using data
-  var myChart = new Chart(chartArea, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], // this should be our years list
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3], // this should be our condition+cases lists
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        xAxes: [{
-          stacked: true
+    // process the data to get the values to plug into the graph (for loop)
+    diseaseData.forEach(function (data) {
+      // data.Year = ; // need to udpate 
+      conditions.push(data.Condition) // need to udpate
+      num_cases.push(parseInt(data.Cases));
+    })
+
+    // build the doughnut chart using our two arrays(lists) of data
+    var doughnutChart = new Chart(chartArea, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: num_cases //.slice(0, 10)
         }],
-        yAxes: [{
-          stacked: true
-        }]
-      }
-    }
-  });
 
-})
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: conditions //.slice(0, 10)
+      },
+      options: {
+        legend: {
+          display: false
+        }
+      }
+    });
+  })
+
+}
+
+// Add an event listener to the dropdown item so that we can run the doughnut chart on click
+// find the elemnt
+// var dropDown = d3.select('#yearDropDown');
+
+// // add event listener to this
+// dropDown.on('click', function() {
+//   // grab the value
+
+//   // pass in the value to function
+// })
+
+
+// Build initial chart when the page loads
+doughnutChart(2018);

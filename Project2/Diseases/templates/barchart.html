@@ -29,7 +29,7 @@
         .y .tick line {
             stroke: #ddd;
         }
-    </style> -->
+    </style>
     <!-- test scripts for bar chart -->
 
 </head>
@@ -44,20 +44,49 @@
             <div id="myDropdown" class="dropdown-content">
                 <a href="templates/R1.html">R1</a>
                 <a href="templates/R2.html">R2</a>
-                <a href="/barchart">Contageous Diseases Bar Graph</a>
+                <a href="bargraph.html">Contageous Diseases Bar Graph</a>
             </div>
         </div>
         <!-- End of Navigation -->
 
+        <!-- DROP DOWN -->
+        <div class="dropdown" id="yearDropDown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="true">
+                Dropdown
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#" value="2009" onClick="doughnutChart(2009)">2009</a></li>
+                <li><a href="#" value="2010" onClick="doughnutChart(2010)">2010</a></li>
+                <li><a href="#" value="2011" onClick="doughnutChart(2011)">2011</a></li>
+                <li><a href="#" value="2012" onClick="doughnutChart(2012)">2012</a></li>
+                <li><a href="#" value="2013" onClick="doughnutChart(2013)">2013</a></li>
+                <li><a href="#" value="2014" onClick="doughnutChart(2014)">2014</a></li>
+                <li><a href="#" value="2015" onClick="doughnutChart(2015)">2015</a></li>
+                <li><a href="#" value="2016" onClick="doughnutChart(2016)">2016</a></li>
+                <li><a href="#" value="2017" onClick="doughnutChart(2017)">2017</a></li>
+                <li><a href="#" value="2018" onClick="doughnutChart(2018)">2018</a></li>
+            </ul>
+        </div>
+
         <!-- Graph Area -->
-        <canvas id="myChart" width="200" height="200"></canvas>
+        <canvas id="myChart"></canvas>
         <!-- End Graph Area -->
 
     </div>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
     <!-- Install D3 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
-    
+
     <!-- Install chartjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"
         integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
@@ -65,4 +94,6 @@
     <script src="static/js/js appy2.js"></script>
     <script src="static/js/barchart.js"></script>
 </body>
+
+
 </html>
