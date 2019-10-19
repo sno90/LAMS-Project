@@ -59,6 +59,11 @@ def names():
     # Return a list of the column names (sample names)
     return df_json
 
+@app.route("/filter_data")
+def filtereddata():
+    """Go to bar chart"""
+    return render_template("data.html")
+
 @app.route("/data/<year>")
 def year_data(year):
     """Return data for specified year"""
@@ -76,6 +81,16 @@ def year_data(year):
 
     # Return a list of the column names (sample names)
     return df_json
+
+@app.route("/map")
+def map():
+    """Go to map"""
+    return render_template("map.html")
+
+# @app.route("/top10peryear")
+# def barchart():
+#     """Go to top 10 per year chart"""
+#     return render_template("index.html")
 
 if __name__ == "__main__":
     app.run()

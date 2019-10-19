@@ -13,12 +13,14 @@ function doughnutChart(year) {
     // const years = []
     let conditions = [];
     let num_cases = [];
+    let region = []; 
 
     // process the data to get the values to plug into the graph (for loop)
     diseaseData.forEach(function (data) {
       // data.Year = ; // need to udpate 
       conditions.push(data.Condition) // need to udpate
       num_cases.push(parseInt(data.Cases));
+      region.
     })
 
     // build the doughnut chart using our two arrays(lists) of data
@@ -35,11 +37,14 @@ function doughnutChart(year) {
       options: {
         legend: {
           display: false
-        }
+        }, 
+        title: {
+          display: true,
+          text: 'Communicable Diseases by Year and County'
+      }
       }
     });
   })
-
 }
 
 // Add an event listener to the dropdown item so that we can run the doughnut chart on click
