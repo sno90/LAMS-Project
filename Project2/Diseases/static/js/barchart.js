@@ -20,7 +20,7 @@ function doughnutChart(year) {
       // data.Year = ; // need to udpate 
       conditions.push(data.Condition) // need to udpate
       num_cases.push(parseInt(data.Cases));
-      region.
+      // region.
     })
 
     // build the doughnut chart using our two arrays(lists) of data
