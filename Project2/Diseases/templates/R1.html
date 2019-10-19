@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aya's Visual: Top 10 Communicable Diseases in VA from 2009-2018</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/aya_style.css">
+
+    <style>
+        body {background-color: gainsboro;}
+        h1 {color: navy;}
+        p {color:navy;}
+      </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+            <!-- End of Navigation -->
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn" href="index.html"
+                    style="font-family: 'Michroma', sans-serif;">Reports</button>
+                <img class="nav-dis" src="static/images/Health Icon.gif">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="/top10peryear">Top Communicable Diseases</a>
+                    <a href="/map">Communicable Diseases Map</a>
+                    <a href="/barchart">Communicable Diseases by Year and County</a>
+                    <a href="/filter_data">Data</a>
+    
+                </div>
+            </div>
+            <!-- End of Navigation -->
+    <div class="navbar">
+        <header class="header">
+            <h1>Top 10 Communicable Diseases 2009-2018</h1>
+        </header>
+    <div class="chart"></div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script type="text/javascript" src="../static/js/app.js"></script>
+  </body>
+
+</html>

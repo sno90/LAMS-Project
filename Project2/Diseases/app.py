@@ -87,10 +87,15 @@ def map():
     """Go to map"""
     return render_template("map.html")
 
-# @app.route("/top10peryear")
-# def barchart():
-#     """Go to top 10 per year chart"""
-#     return render_template("index.html")
+@app.route('/Resources/<path:path>')
+def send_js(path):
+    return send_from_directory('Resources', path)
+    
+
+@app.route("/top10peryear")
+def linechart():
+    """Go to top 10 per year chart"""
+    return render_template("R1.html")
 
 if __name__ == "__main__":
     app.run()
