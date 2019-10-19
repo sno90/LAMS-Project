@@ -223,3 +223,17 @@ select {
     opacity: 1;
   }
 }
+
+.tooltip {
+  position: absolute;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  font: 12px sans-serif;
+  text-align: center;
+  color: white;
+  background: black;
+  border: 0;
+  border-radius: 10px;
+  display: none;
+}
