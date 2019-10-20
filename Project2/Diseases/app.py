@@ -82,20 +82,31 @@ def year_data(year):
     # Return a list of the column names (sample names)
     return df_json
 
-@app.route("/map")
-def map():
-    """Go to map"""
-    return render_template("map.html")
+# @app.route("/map")
+# def map():
+#     """Go to map"""
+#     return render_template("map.html")
 
-@app.route('/Resources/<path:path>')
-def send_js(path):
-    return send_from_directory('Resources', path)
+# @app.route('/Resources/<path:path>')
+# def send_js(path):
+#     return send_from_directory('Resources', path)
+
+# @app.route("/csvData")
+# def getPlotCSV():
+#    # with open("outputs/Adjacency.csv") as fp:
+#    #     csv = fp.read()
+#    csv = '1,2,3\n4,5,6\n'
+#    return Response(
+#        csv,
+#        mimetype="text/csv",
+#        headers={"Content-disposition":
+#                 "attachment; Top10_Conditions_by_Year.csv"})
     
 
 @app.route("/top10peryear")
 def linechart():
     """Go to top 10 per year chart"""
-    return render_template("R1.html")
+    return render_template("top10.html")
 
 if __name__ == "__main__":
     app.run()

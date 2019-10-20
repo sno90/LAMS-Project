@@ -28,11 +28,11 @@ function doughnutChart(year) {
       type: 'doughnut',
       data: {
         datasets: [{
-          data: num_cases //.slice(0, 10)
+          data: num_cases.slice(0, 10)
         }],
 
         // These labels appear in the legend and in the tooltips when hovering different arcs
-        labels: conditions //.slice(0, 10)
+        labels: conditions.slice(0, 10)
       },
       options: {
         legend: {

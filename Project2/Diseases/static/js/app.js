@@ -39,7 +39,8 @@ function makeResponsive() {
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
   // Read CSV
-  d3.csv("Resources/Top10_Conditions_by_Year.csv").then(function (conditionData) {
+  // d3.csv("Resources/Top10_Conditions_by_Year.csv").then(function (conditionData) {
+    d3.json('/data').then(function (conditionData) {
 
     // Create year parser
     var yearParser = d3.timeParse("%Y");
@@ -47,7 +48,7 @@ function makeResponsive() {
     // Parse data
     conditionData.forEach(function (data) {
       data.Year = yearParser(data.Year);
-      data.Count = +data.Count;
+      data.Cases = +data.Cases;
     });
     console.log(conditionData)
 
