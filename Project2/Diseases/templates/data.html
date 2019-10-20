@@ -11,31 +11,17 @@
     <link rel="stylesheet" href="static/css/dropdown.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
 </head>
-
 <body>
     <div class="wrapper">
-         <!-- End of Navigation -->
-        <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn" href="index.html"
-                style="font-family: 'Michroma', sans-serif;">Reports</button>
-            <img class="nav-dis" src="static/images/Health Icon.gif">
-            <div id="myDropdown" class="dropdown-content">
-                <a href="/top10peryear">Top Communicable Diseases</a>
-                <a href="/map">Communicable Diseases Map</a>
-                <a href="/barchart">Communicable Diseases by Year and County</a>
-                <a href="/filter_data">Data</a>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html" style="font-family: 'Michroma', sans-serif;">All Reported Communicable Diseases
+                        <img class="nav-dis" src="static/images/Health Icon.gif">
+                    </a>
+                </div>
             </div>
-        </div>
-         <!-- End of Navigation -->
-
-        <div class="hero text-center">
-            <h1
-                style="font-family: 'Michroma', sans-serif; text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 5px rgb(200, 200, 212);">
-                Communicable Diseases</h1>
-            <p
-                style="color: rgb(224, 224, 238); text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 5px rgb(200, 200, 212); font-size: 30px;">
-                Protect Yourself and Your Environment</p>
-        </div>
+        </nav>
         <div class="container">
             <div class="row margin-top-50">
                 <div class="col-md-2">
@@ -61,7 +47,8 @@
                                         </ul>
                                     </div>
                                     <button id="filter-btn" type="submit"
-                                        class="btn btn-default btn-lg btn-block">Filter Table</button>
+                                        class="btn btn-default btn-lg btn-block">Filter
+                                        Table</button>
 
                                     <button id="reset-btn" type="reset" class="btn btn-default btn-lg btn-block">Reset
                                         Table</button>
